@@ -49,10 +49,15 @@ python3 -m http.server -d . 8080   # http://localhost:8080
 
 ### Extensionless URLs
 
-Every page is a flat `.html` file so it opens from disk with no server, but all canonicals,
-sitemap entries and internal links use the extensionless form (`/compare/screenlimiter-vs-opal`).
-`_redirects` makes those resolve. **If you add a page, add its rewrite to `_redirects` and to
-`sitemap.xml`**, or you ship a 404 with a canonical tag on it.
+Every page is a flat `.html` file so it opens from disk with no server, and all canonicals
+and sitemap entries use the extensionless form (`/compare/screenlimiter-vs-opal`). Cloudflare
+Pages serves `/foo` from `foo.html` on its own, and redirects `/compare` to `/compare/` for
+the directory index.
+
+**Do not add extensionless rewrites to `_redirects`.** Pages normalises `/privacy` →
+`privacy.html` → `/privacy`, so a rule pointing at the `.html` fights that and produces an
+infinite 307 on the exact URLs App Store review opens. `_redirects` is comment-only for this
+reason; when you add a page, add it to `sitemap.xml` and link it — nothing else.
 
 ### The two URLs the app depends on
 
@@ -62,8 +67,8 @@ sitemap entries and internal links use the extensionless form (`/compare/screenl
 - `https://screenlimiter.com/support`
 
 The App Store review notes surface both, so they must resolve **without** the `.html`.
-`_redirects` handles that on Cloudflare Pages. On a host with no rewrite support (GitHub
-Pages, plain S3), pick one:
+Cloudflare Pages handles that natively (verified live). On a host with no rewrite support
+(GitHub Pages, plain S3), pick one:
 
 - rename the files to `privacy/index.html` and `support/index.html`, or
 - change the two constants in `Brand.swift` to end in `/privacy.html` and `/support.html`.
