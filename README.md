@@ -1,7 +1,8 @@
 # screenlimiter.com
 
-The marketing site. Three pages, one stylesheet, no build step, no JavaScript, no external
-requests — open `index.html` in a browser and it works.
+The marketing site. Static HTML, one stylesheet, no build step, no JavaScript, no external
+requests — open `index.html` in a browser and it works. Published with **Cloudflare Pages**
+from this repository; the repository root *is* the site root.
 
 ```
 website/
@@ -17,8 +18,8 @@ website/
 │   ├── screenlimiter-vs-opal.html
 │   ├── screenlimiter-vs-one-sec.html
 │   └── screenlimiter-vs-screenzen.html
-├── _redirects      Netlify / Cloudflare: extensionless URLs -> .html
-├── vercel.json     Vercel equivalent
+├── _redirects      Cloudflare Pages: extensionless URLs -> .html
+├── _headers        Cloudflare Pages: caching + security headers
 ├── sitemap.xml     all 11 pages
 ├── robots.txt      points at the sitemap
 └── assets/
@@ -34,28 +35,24 @@ show a version of the app that doesn't exist.
 
 ## Deploying
 
-Drag the `website/` folder onto Netlify, or:
+Cloudflare Pages: connect `github.com/anujtenani/screenlimiter`, framework preset **None**,
+build command **empty**, output directory **/**. Every push to `main` deploys.
+
+There is no build step, so a local preview is just:
 
 ```bash
-# Netlify
-netlify deploy --dir website --prod
-
-# Vercel
-vercel website --prod
-
-# Cloudflare Pages
-wrangler pages deploy website
-
-# Anything static — the whole thing is 3 HTML files and an assets folder
-rsync -av website/ user@host:~/screenlimiter.com/
+python3 -m http.server -d . 8080   # http://localhost:8080
 ```
+
+(The server must honour `_redirects` for extensionless URLs; Cloudflare does, a plain
+`http.server` does not.)
 
 ### Extensionless URLs
 
 Every page is a flat `.html` file so it opens from disk with no server, but all canonicals,
 sitemap entries and internal links use the extensionless form (`/compare/screenlimiter-vs-opal`).
-`_redirects` and `vercel.json` make those resolve. **If you add a page, add its rewrite to
-both files and to `sitemap.xml`**, or you ship a 404 with a canonical tag on it.
+`_redirects` makes those resolve. **If you add a page, add its rewrite to `_redirects` and to
+`sitemap.xml`**, or you ship a 404 with a canonical tag on it.
 
 ### The two URLs the app depends on
 
@@ -65,8 +62,8 @@ both files and to `sitemap.xml`**, or you ship a 404 with a canonical tag on it.
 - `https://screenlimiter.com/support`
 
 The App Store review notes surface both, so they must resolve **without** the `.html`.
-`_redirects` and `vercel.json` handle that on Netlify, Cloudflare Pages and Vercel. On a
-host with no rewrite support (GitHub Pages, plain S3), pick one:
+`_redirects` handles that on Cloudflare Pages. On a host with no rewrite support (GitHub
+Pages, plain S3), pick one:
 
 - rename the files to `privacy/index.html` and `support/index.html`, or
 - change the two constants in `Brand.swift` to end in `/privacy.html` and `/support.html`.
