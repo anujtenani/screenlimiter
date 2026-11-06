@@ -1,14 +1,7 @@
-# App Store review opens /privacy and /support without the extension.
-/privacy  /privacy.html  200
-/support  /support.html  200
-
-# Comparison pages
-/compare                          /compare/index.html                    200
-/compare/                         /compare/index.html                    200
-/compare/best-screen-time-apps    /compare/best-screen-time-apps.html    200
-/compare/why-daily-limits-fail    /compare/why-daily-limits-fail.html    200
-/compare/limit-instagram-hourly   /compare/limit-instagram-hourly.html   200
-/compare/screenlimiter-vs-precursor      /compare/screenlimiter-vs-precursor.html      200
-/compare/screenlimiter-vs-opal           /compare/screenlimiter-vs-opal.html           200
-/compare/screenlimiter-vs-one-sec        /compare/screenlimiter-vs-one-sec.html        200
-/compare/screenlimiter-vs-screenzen      /compare/screenlimiter-vs-screenzen.html      200
+# Cloudflare Pages serves these itself.
+#
+# Pages normalises HTML URLs: /privacy is served from /privacy.html, and /compare
+# redirects to /compare/ to serve compare/index.html. Rewriting /privacy -> /privacy.html
+# here made Pages normalise the target straight back to /privacy — an infinite 307 loop on
+# exactly the two URLs the App Store review opens. No rules are needed; add real redirects
+# below only for paths that have no file.
