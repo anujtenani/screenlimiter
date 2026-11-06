@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Screen Limiter</title>
+<meta name="description" content="Getting started with Screen Limiter, fixing Screen Time access, and what to do if a limit isn't blocking.">
+<meta name="theme-color" content="#0B0E13">
+<link rel="canonical" href="https://screenlimiter.com/support">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/icon-180.png" alt="">
+      Screen Limiter
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap doc" style="padding-bottom: 40px;">
+    <h1>Support</h1>
+    <p class="updated">Answers for the things that actually go wrong.</p>
+
+    <div class="note">
+      <p>Still stuck after reading this page? Email
+      <a href="mailto:hello@screenlimiter.com">hello@screenlimiter.com</a> with your iOS version and
+      a sentence about what you expected to happen. There is no ticket system and no account to look up.</p>
+    </div>
+
+    <h2>Getting started</h2>
+    <ul>
+      <li>Open Screen Limiter and allow Screen Time access when iOS asks. Without that permission nothing can be blocked.</li>
+      <li>Tap <strong>+</strong>, choose the apps, categories or websites to limit, then pick an allowance,
+      a window and a strictness level.</li>
+      <li>Save. The group starts running immediately, and the first window begins at the next boundary.</li>
+    </ul>
+
+    <h2>“Screen Time access” won't turn on</h2>
+    <p>This is the one failure that looks like a bug and usually isn't. iOS owns this switch, and it
+    sometimes stops offering it to an app. Try these in order:</p>
+
+    <h3>1. The proper switch</h3>
+    <ul>
+      <li>Open the <strong>Settings</strong> app.</li>
+      <li>Tap <strong>Screen Time</strong>, then scroll to the bottom.</li>
+      <li>Under <strong>Apps With Screen Time Access</strong>, tap <strong>Screen Limiter</strong> and turn it on.</li>
+    </ul>
+    <p>Note that this is <em>not</em> Settings → Screen Limiter. That page only lists Siri and Search,
+    which is why the switch appears to be missing.</p>
+
+    <h3>2. If “Apps With Screen Time Access” isn't there at all</h3>
+    <p>When that whole section is missing, iOS has wedged the permission and no setting will bring it
+    back. Reinstalling is the only reset Apple provides:</p>
+    <ul>
+      <li>Delete Screen Limiter from the Home Screen.</li>
+      <li>Reinstall it from the App Store.</li>
+      <li>Open it and allow Screen Time when asked.</li>
+    </ul>
+    <p>You will need to recreate your groups. This is a limitation of the Screen Time framework, not
+    something the app can work around.</p>
+
+    <h2>A limit isn't blocking anything</h2>
+    <ul>
+      <li><strong>Is the group switched on?</strong> Each group has its own switch on the Limits screen.</li>
+      <li><strong>Are limits paused?</strong> The button under the group list pauses everything at once.</li>
+      <li><strong>Is today an active day?</strong> A group only runs on the days it has selected.</li>
+      <li><strong>Has the allowance already reset?</strong> The ring next to each group counts down to the
+      next window — if it just reset, the app is unblocked until you spend the new minutes.</li>
+    </ul>
+    <p>If a group holds an app that has been removed from the phone, or your app selection became invalid,
+    Screen Limiter clears that group's shield rather than leaving a block you can't lift. Re-pick the apps to
+    start it again.</p>
+
+    <h2>Getting more time</h2>
+    <p>Tap <strong>Ask for more time</strong> on the shield, then hold the button. Easy fixes it instantly,
+    Normal allows five stops a day with a 3-second hold, and Hard allows one stop a day with an 8-second hold.
+    After the last stop, the group stays blocked until the window resets.</p>
+
+    <h2>I forgot my passcode</h2>
+    <p>If you set a security question in <strong>Parent Mode</strong>, answer it to reset. If you didn't,
+    there is no recovery: the passcode is stored only as a hash, so it cannot be read back. Deleting and
+    reinstalling the app removes it — along with every limit, which is the point of the lock.</p>
+
+    <h2>Pausing and removing limits</h2>
+    <ul>
+      <li><strong>Pause everything</strong> — the button under the group list. Pausing for a while writes a
+      note into the pause sheet first, if “Written reason before pausing” is on.</li>
+      <li><strong>Delete one group</strong> — open the group and choose <strong>Delete group</strong>.</li>
+      <li><strong>Remove everything</strong> — delete the app. There is no data anywhere else.</li>
+    </ul>
+
+    <h2>Reporting a bug</h2>
+    <p>Email <a href="mailto:hello@screenlimiter.com">hello@screenlimiter.com</a>. Useful things to include:
+    your iPhone model, your iOS version (Settings → General → About), the group's allowance, window and
+    strictness level, and what happened instead. Screenshots help. There is no in-app analytics, so your
+    report is the only way a problem becomes visible.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img src="assets/icon-180.png" alt="">
+          Screen Limiter
+        </a>
+        <p>A few minutes an hour.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>App</h4>
+          <a href="index.html#how">How it works</a>
+          <a href="index.html#compare">Comparison</a>
+          <a href="index.html#faq">Questions</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="privacy.html">Privacy</a>
+          <a href="support.html">Support</a>
+          <a href="mailto:hello@screenlimiter.com">hello@screenlimiter.com</a>
+        </div>
+      </div>
+    </div>
+    <p class="legal">© 2026 Screen Limiter. Not affiliated with Apple Inc. iPhone, iPad and App Store are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+
+</body>
+</html>
