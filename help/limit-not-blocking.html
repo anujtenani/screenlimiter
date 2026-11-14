@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A limit isn't blocking — Screen Limiter help</title>
+<meta name="description" content="Nine checks in order: permission, group switch, paused limits, active days and hours, window resets, in-app browsers, and a second Screen Time manager fighting the first.">
+<meta name="theme-color" content="#0B0E13">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="../assets/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://screenlimiter.com/help/limit-not-blocking">
+<link rel="stylesheet" href="../assets/style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Screen Limiter">
+<meta property="og:title" content="A limit isn't blocking — Screen Limiter help">
+<meta property="og:description" content="Nine checks in order: permission, group switch, paused limits, active days and hours, window resets, in-app browsers, and a second Screen Time manager fighting the first.">
+<meta property="og:url" content="https://screenlimiter.com/help/limit-not-blocking">
+<meta property="og:image" content="https://screenlimiter.com/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A limit isn't blocking — Screen Limiter help">
+<meta name="twitter:description" content="Nine checks in order: permission, group switch, paused limits, active days and hours, window resets, in-app browsers, and a second Screen Time manager fighting the first.">
+<meta name="twitter:image" content="https://screenlimiter.com/assets/social.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://screenlimiter.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://screenlimiter.com/help/"},{"@type":"ListItem","position":3,"name":"A limit isn't blocking","item":"https://screenlimiter.com/help/limit-not-blocking"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"A limit isn't blocking — Screen Limiter help","description":"Why a Screen Limiter group stops blocking, and the nine checks that find the cause.","url":"https://screenlimiter.com/help/limit-not-blocking","isPartOf":{"@type":"WebSite","name":"Screen Limiter","url":"https://screenlimiter.com/"}}</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/"><img src="../assets/icon-180.png" alt="">Screen Limiter</a>
+    <nav class="nav-links">
+      <a href="/#how" class="hide-sm">How it works</a>
+      <a href="/health/">Why it matters</a>
+      <a href="/compare/" class="hide-xs">Compare</a>
+      <a href="/help/">Help</a>
+      <a href="/app">App Store</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap doc article">
+    <p class="crumb"><a href="/">Screen Limiter</a> / <a href="/help/">Help</a> / A limit isn't blocking</p>
+    <h1>A limit isn't blocking anything</h1>
+    <p class="updated">Last updated November 2026</p>
+    <p class="lead">Usually the group is fine and something around it is off. These checks are ordered by how often each one is the answer — the first is the culprit far more often than the rest put together.</p>
+
+    <h2>1. Is Screen Time access still on?</h2>
+    <p>This is the cause more often than everything else combined, and it can change without you
+    touching it — a Screen Time toggle, a restore, a system update. Open
+    <strong>Settings → Screen Time → Apps With Screen Time Access</strong> and check Screen
+    Limiter is on. If the app is showing a "Screen Time is switched off" banner, this is already
+    your answer: <a href="/help/screen-time-access">fix the permission first</a>.</p>
+
+    <h2>2. Is the group switched on?</h2>
+    <p>Every group has its own switch on the Limits screen, next to the name. It is easy to turn
+    off while editing and never turn back on.</p>
+
+    <h2>3. Are all limits paused?</h2>
+    <p>The pause control under the group list stops everything at once, not one group. The Limits
+    screen says <strong>Paused</strong> while it is on, and Siri will answer "Limits are paused."
+    if you ask when the next window opens. Pausing is meant to be deliberate, so it is worth
+    checking before anything else structural.</p>
+
+    <h2>4. Is today an active day — and are you inside the active hours?</h2>
+    <p>A group only runs on the days it has selected, and if <strong>Restrict to certain
+    hours</strong> is on, only between those hours. The editor warns when no days are selected.
+    A group that runs 9am–5pm on weekdays will do exactly nothing on a Saturday, which is correct
+    and frequently mistaken for a bug.</p>
+
+    <h2>5. Has the window just reset?</h2>
+    <p>Look at the ring on the group card: it counts down to the next window. A five-minute
+    allowance on a one-hour window is unblocked at the top of the hour, blocked again six minutes
+    later, and unblocked again at the next top of the hour. If you arrived between those moments,
+    the app is supposed to be usable.</p>
+
+    <h2>6. Did the minutes actually run out?</h2>
+    <p>The shield only appears once the group's allowance is spent. Usage that happened before the
+    group existed, or on a day the group was off, does not count against it. If you have just
+    created the group, the first window starts at the next boundary and the minutes are available
+    immediately.</p>
+
+    <h2>7. Is the app in the group at all?</h2>
+    <p>Two selections that look identical are not: <strong>Instagram</strong> (an app) and
+    <strong>Social</strong> (a category) are separate tokens. Picking a category does not
+    automatically cover an app whose own category differs, and picking an app does not cover its
+    website.</p>
+    <p>Selections can also go stale — an app that was deleted, reinstalled under a new bundle, or
+    updated in some unusual way can leave a token that no longer resolves. When that happens
+    Screen Limiter clears the shield rather than leaving something blocked with no way out. Open
+    the group, re-pick the apps and save.</p>
+
+    <h2>8. The scrolling isn't happening in the app you limited</h2>
+    <p>Websites are limited by domain, and only where iOS enforces them: Safari and other apps that
+    present web content as web content. Two consequences worth knowing:</p>
+    <ul>
+      <li><strong>App and website are separate.</strong> Limiting <code>instagram.com</code> does
+      not limit the Instagram app, and limiting the Instagram app does not limit the site in
+      Safari. Add both if you want both.</li>
+      <li><strong>An in-app browser belongs to its host.</strong> A link that opens inside
+      Instagram, Messenger or a mail app stays inside that app, so blocking the host app blocks
+      it — and blocking Safari does not.</li>
+    </ul>
+
+    <h2>9. Something else is managing Screen Time</h2>
+    <p>Apple's own App Limits, Downtime and Screen Distance can all shield apps independently of
+    Screen Limiter. When two systems block the same app the overlapping states are hard to reason
+    about: one clears its shield and the other immediately reapplies one, which looks like Screen
+    Limiter ignoring its own window. If you are testing, turn Apple's App Limits and Downtime off
+    for the same apps and see whether the behaviour changes. Two managers for one app is not a
+    configuration anyone should run long-term.</p>
+
+    <h2>If none of that explains it</h2>
+    <p>Open <strong>Settings → Diagnostics</strong>. The screen was built for exactly this moment:</p>
+    <ul>
+      <li><strong>Screen Time</strong> — authorization state, app group availability, whether
+      limits are running, and the appearance the shield will paint with. All green means the app
+      has permission.</li>
+      <li><strong>Armed activities</strong> — the schedules iOS has actually accepted, with their
+      next interval. "no next interval" on a group that should be running is the smoking gun: iOS
+      never armed it.</li>
+      <li><strong>Monitor</strong> — the last time the extension woke up. "never" means the
+      threshold never fired, which is a different problem from "fired and was ignored".</li>
+      <li><strong>Per group</strong> — active or inactive, the window's end, whether a shield is
+      currently applied, stops remaining and how many selections still resolve.</li>
+    </ul>
+    <p>Send a screenshot of that screen with your iOS version and the group's settings to
+    <a href="mailto:hello@screenlimiter.com">hello@screenlimiter.com</a>. There is no analytics, so
+    that screenshot is the only diagnostic record that exists.</p>
+
+    <h2>Questions</h2>
+
+    <details class="faq-item" open>
+      <summary>Why does it block a minute or two after the limit is reached?</summary>
+      <p>iOS decides when the usage threshold is crossed and when to wake the extension. It is
+      usually within seconds, but it is not instantaneous, and Screen Limiter cannot make it
+      faster.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does force-quitting Screen Limiter break the limits?</summary>
+      <p>No. The schedule is registered with iOS, so the window turns and the shield applies
+      whether the app is open, in the background or force-quit.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Why was my app blocked once and never again?</summary>
+      <p>Check the Diagnostics "Armed activities" list. If the activity is missing or has no next
+      interval, the schedule was dropped — usually after a permission change or a restore — and
+      toggling the group off and on re-arms it.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can Screen Limiter block just Shorts or just Reels?</summary>
+      <p>No, and neither can any other app using Apple's Screen Time framework. iOS identifies
+      applications, categories and web domains — a tab inside an app is invisible to it. Blocking
+      Reels means blocking Instagram for that window.</p>
+    </details>
+    <div class="cta-inline">
+      <h2>Five minutes an hour, then it stops</h2>
+      <p>Screen Limiter is free on the App Store. Pick the apps, choose an allowance, and let iOS hold the line.</p>
+      <a class="btn btn-primary" href="/app">Download on the App Store</a>
+    </div>
+
+    <div class="related">
+      <h2>Keep reading</h2>
+      <div class="related-links">
+        <a href="/help/screen-time-access">Screen Time access</a>
+        <a href="/help/more-time">Getting more time</a>
+        <a href="/compare/why-daily-limits-fail">Why daily limits fail</a>
+        <a href="/support">Support</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/"><img src="../assets/icon-180.png" alt="">Screen Limiter</a>
+        <p>A few minutes an hour. A small allowance, repeated, so a bad morning doesn't cost you the day.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>App</h4>
+          <a href="/#how">How it works</a>
+          <a href="/#screenshots">Screenshots</a>
+          <a href="/#faq">Questions</a>
+          <a href="/app">App Store</a>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <a href="/health/">Why it matters</a>
+          <a href="/health/sleep">Screens and sleep</a>
+          <a href="/health/attention">Attention</a>
+          <a href="/guides/">Guides</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compare</h4>
+          <a href="/compare/best-screen-time-apps">Best apps</a>
+          <a href="/compare/screenlimiter-vs-precursor">vs Precursor</a>
+          <a href="/compare/screenlimiter-vs-opal">vs Opal</a>
+          <a href="/compare/screenlimiter-vs-screenzen">vs ScreenZen</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="/help/">Help centre</a>
+          <a href="/support">Support</a>
+          <a href="/privacy">Privacy</a>
+          <a href="mailto:hello@screenlimiter.com">Email us</a>
+        </div>
+      </div>
+    </div>
+    <p class="legal">© 2026 Screen Limiter. Built on Apple's Screen Time framework (Family Controls, Device Activity, Managed Settings). Not affiliated with Apple Inc. iPhone, iPad and App Store are trademarks of Apple Inc. Precursor, Opal, one sec, ScreenZen, Jomo and Freedom belong to their respective owners and appear here for comparison only.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screen Time access won't turn on — Screen Limiter</title>
+<meta name="description" content="Why the Screen Time switch is missing, where 'Apps With Screen Time Access' actually lives, and the reinstall that fixes a wedged permission on iOS 17 and later.">
+<meta name="theme-color" content="#0B0E13">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="../assets/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://screenlimiter.com/help/screen-time-access">
+<link rel="stylesheet" href="../assets/style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Screen Limiter">
+<meta property="og:title" content="Screen Time access won't turn on — Screen Limiter">
+<meta property="og:description" content="Why the Screen Time switch is missing, where 'Apps With Screen Time Access' actually lives, and the reinstall that fixes a wedged permission on iOS 17 and later.">
+<meta property="og:url" content="https://screenlimiter.com/help/screen-time-access">
+<meta property="og:image" content="https://screenlimiter.com/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Screen Time access won't turn on — Screen Limiter">
+<meta name="twitter:description" content="Why the Screen Time switch is missing, where 'Apps With Screen Time Access' actually lives, and the reinstall that fixes a wedged permission on iOS 17 and later.">
+<meta name="twitter:image" content="https://screenlimiter.com/assets/social.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://screenlimiter.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://screenlimiter.com/help/"},{"@type":"ListItem","position":3,"name":"Screen Time access","item":"https://screenlimiter.com/help/screen-time-access"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Screen Time access won't turn on — Screen Limiter","description":"Where the Screen Time permission switch lives, why it can go missing, and how to get it back.","url":"https://screenlimiter.com/help/screen-time-access","isPartOf":{"@type":"WebSite","name":"Screen Limiter","url":"https://screenlimiter.com/"}}</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/"><img src="../assets/icon-180.png" alt="">Screen Limiter</a>
+    <nav class="nav-links">
+      <a href="/#how" class="hide-sm">How it works</a>
+      <a href="/health/">Why it matters</a>
+      <a href="/compare/" class="hide-xs">Compare</a>
+      <a href="/help/">Help</a>
+      <a href="/app">App Store</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap doc article">
+    <p class="crumb"><a href="/">Screen Limiter</a> / <a href="/help/">Help</a> / Screen Time access</p>
+    <h1>When Screen Time access won't turn on</h1>
+    <p class="updated">Last updated November 2026</p>
+    <p class="lead">iOS owns that switch, not Screen Limiter — so the app can only tell you where to look. There are three places it can be, and one of them is hidden by a bug.</p>
+
+    <h2>What the permission actually is</h2>
+    <p>Screen Limiter blocks apps through Apple's Screen Time framework. Before iOS will let it
+    shield anything, the app needs authorization from Family Controls — the same permission
+    Apple's own App Limits use. It is not a normal notification prompt that can be asked for
+    again whenever it is convenient. iOS surfaces it once, and after that the only control is a
+    switch in Settings.</p>
+    <p>Until that switch is on, Screen Limiter is a well-organised list of groups that cannot do
+    anything. The onboarding screen says as much; it just doesn't look like a failure.</p>
+
+    <h2>The switch, by its real name</h2>
+    <p>Open <strong>Settings → Screen Time</strong>, scroll to the bottom, and look for
+    <strong>Apps With Screen Time Access</strong>.</p>
+    <ul>
+      <li>If Screen Limiter is listed there, turn it on and reopen the app.</li>
+      <li>If the section is there but Screen Limiter is missing, scroll the list — it follows
+      install order.</li>
+      <li>If the section is missing entirely, skip to the next part of this page.</li>
+    </ul>
+
+    <div class="callout warn">
+      <p><strong>Not that Settings page.</strong> <em>Settings → Screen Limiter</em> only lists
+      Siri &amp; Search and a handful of system services. The permission is not there, and looking
+      for it there is the most common reason people conclude the app is broken.</p>
+    </div>
+
+    <h2>If "Apps With Screen Time Access" isn't there at all</h2>
+    <p>This is an iOS bug, not a Screen Limiter setting, and it has one fix: reinstall.</p>
+    <ol>
+      <li>Delete Screen Limiter from the Home Screen.</li>
+      <li>Reinstall it from the App Store.</li>
+      <li>Open it, tap <strong>Continue</strong>, and allow Screen Time when iOS asks.</li>
+    </ol>
+    <p>Be aware of what that costs: your groups, passcode and week of insights are stored on the
+    device and go with the app. Reinstalling is the only reset Apple provides for this permission,
+    which is precisely why it is the last step rather than the first.</p>
+
+    <h2>If the switch is on and it still isn't working</h2>
+    <ul>
+      <li><strong>Force-quit Screen Limiter and reopen it.</strong> The authorization state is read
+      at launch and on returning to the app.</li>
+      <li><strong>Answer the system prompt properly.</strong> If iOS showed "Allow" and the answer
+      was no, the app cannot re-ask. Reinstalling is the only way to see it again.</li>
+      <li><strong>Check Screen Time itself is on.</strong> If Screen Time is switched off at the top
+      of Settings → Screen Time, every app that depends on it stops enforcing, including this one.
+      Turning Screen Time back on can prompt to delete its usage history — declining that prompt
+      cancels the change, so read it before tapping.</li>
+      <li><strong>Restart the phone.</strong> Unglamorous, and it clears more wedged Screen Time
+      state than any other step.</li>
+    </ul>
+
+    <h2>The three states, and what you see in the app</h2>
+    <ul>
+      <li><strong>Not asked yet.</strong> The onboarding screen offers <strong>Continue</strong>,
+      with the note that iOS will confirm next.</li>
+      <li><strong>Denied.</strong> A banner reads <em>"Screen Time is switched off"</em>, with a
+      line about turning it back on in Settings → Screen Time. Nothing is blocked until it is.</li>
+      <li><strong>Approved.</strong> Everything works, and the Settings row says so. No banner.</li>
+    </ul>
+
+    <h2>Diagnostics is the definitive answer</h2>
+    <p><strong>Settings → Diagnostics</strong> shows the raw authorization value and whether the
+    shared app group is available, above the armed activities and the monitor's last wake-up. If
+    <code>authorization</code> says approved and nothing is blocking, the problem is downstream of
+    the permission and belongs on the
+    <a href="/help/limit-not-blocking">limit isn't blocking</a> page. If it says denied, it is
+    this page.</p>
+
+    <h2>Questions people ask about this</h2>
+
+    <details class="faq-item" open>
+      <summary>Why can't Screen Limiter just ask again?</summary>
+      <p>Family Controls authorization is granted by the system, not the app. Apple designed it so
+      an app cannot repeatedly prompt until you cave in. Once the answer is no, only Settings — or
+      a fresh install — changes it.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Will reinstalling delete my groups?</summary>
+      <p>Yes. Groups, the passcode and the week of insights live in the app's own container on
+      this device, and there is no backup copy anywhere because nothing is uploaded. Recreate your
+      groups after reinstalling.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do iPad and iPhone keep separate permissions?</summary>
+      <p>Each device grants its own Screen Time access. On iPad the switch is in the same place:
+      Settings → Screen Time → Apps With Screen Time Access.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does Screen Limiter see which apps I allow?</summary>
+      <p>iOS gives the app an opaque token rather than an app name. The token can be resolved into
+      a name on this device — that is how a new group suggests its name — and it means nothing off
+      it. Nothing is uploaded, so there is no server-side record of your access, your groups or
+      your apps. The <a href="/privacy">privacy policy</a> is one page.</p>
+    </details>
+    <div class="cta-inline">
+      <h2>Five minutes an hour, then it stops</h2>
+      <p>Screen Limiter is free on the App Store. Pick the apps, choose an allowance, and let iOS hold the line.</p>
+      <a class="btn btn-primary" href="/app">Download on the App Store</a>
+    </div>
+
+    <div class="related">
+      <h2>Keep reading</h2>
+      <div class="related-links">
+        <a href="/help/limit-not-blocking">A limit isn't blocking</a>
+        <a href="/help/more-time">Getting more time</a>
+        <a href="/support">Support</a>
+        <a href="/help/">Help centre</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/"><img src="../assets/icon-180.png" alt="">Screen Limiter</a>
+        <p>A few minutes an hour. A small allowance, repeated, so a bad morning doesn't cost you the day.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>App</h4>
+          <a href="/#how">How it works</a>
+          <a href="/#screenshots">Screenshots</a>
+          <a href="/#faq">Questions</a>
+          <a href="/app">App Store</a>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <a href="/health/">Why it matters</a>
+          <a href="/health/sleep">Screens and sleep</a>
+          <a href="/health/attention">Attention</a>
+          <a href="/guides/">Guides</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compare</h4>
+          <a href="/compare/best-screen-time-apps">Best apps</a>
+          <a href="/compare/screenlimiter-vs-precursor">vs Precursor</a>
+          <a href="/compare/screenlimiter-vs-opal">vs Opal</a>
+          <a href="/compare/screenlimiter-vs-screenzen">vs ScreenZen</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="/help/">Help centre</a>
+          <a href="/support">Support</a>
+          <a href="/privacy">Privacy</a>
+          <a href="mailto:hello@screenlimiter.com">Email us</a>
+        </div>
+      </div>
+    </div>
+    <p class="legal">© 2026 Screen Limiter. Built on Apple's Screen Time framework (Family Controls, Device Activity, Managed Settings). Not affiliated with Apple Inc. iPhone, iPad and App Store are trademarks of Apple Inc. Precursor, Opal, one sec, ScreenZen, Jomo and Freedom belong to their respective owners and appear here for comparison only.</p>
+  </div>
+</footer>
+
+</body>
+</html>

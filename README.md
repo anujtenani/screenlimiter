@@ -8,25 +8,44 @@ from this repository; the repository root *is* the site root.
 website/
 ├── index.html      hero, how it works, modes, screenshots, features, comparison, privacy, FAQ
 ├── privacy.html    the policy the app links to
-├── support.html    the help page the app links to
-├── compare/
-│   ├── index.html                      the hub: category table + links
-│   ├── best-screen-time-apps.html      roundup, sorted by failure mode
-│   ├── why-daily-limits-fail.html      the argument page
-│   ├── limit-instagram-hourly.html     how-to page
-│   ├── screenlimiter-vs-precursor.html        head-to-head
+├── support.html    the troubleshooting page the app links to
+├── help/           the help centre: the hub plus four task-specific pages
+│   ├── index.html                  hub: the four failures, quick answers, what to send
+│   ├── screen-time-access.html     the permission switch, and when it goes missing
+│   ├── limit-not-blocking.html     nine checks, in order of likelihood
+│   ├── more-time.html              shield buttons, stops, the +2/+5/+10 selector
+│   └── passcode.html               passcode, Parent Mode, lockout
+├── health/         why it matters, written to the evidence
+│   ├── index.html                  the honest summary + links
+│   ├── sleep.html                  evening light, bedtime procrastination
+│   ├── attention.html              attention residue, the 8-second myth
+│   ├── mood.html                   the large studies and their effect sizes
+│   └── body.html                   eye strain, posture, 20-20-20
+├── guides/         search-intent pages
+│   ├── index.html                  hub
+│   ├── block-youtube-shorts.html   what can and cannot be blocked
+│   ├── block-instagram-reels.html  the same problem, different app
+│   ├── stop-doomscrolling.html     a four-part protocol
+│   └── limit-screen-time-iphone.html  Apple's limits, then why they leak
+├── compare/        the argument pages + one head-to-head per competitor
+│   ├── index.html
+│   ├── best-screen-time-apps.html
+│   ├── why-daily-limits-fail.html
+│   ├── limit-instagram-hourly.html
+│   ├── screenlimiter-vs-precursor.html
 │   ├── screenlimiter-vs-opal.html
 │   ├── screenlimiter-vs-one-sec.html
 │   └── screenlimiter-vs-screenzen.html
-├── _redirects      Cloudflare Pages: extensionless URLs -> .html
+├── llms.txt        what AI answer engines should say, including when not to recommend it
+├── _redirects      comment-only, plus the /app 301
 ├── _headers        Cloudflare Pages: caching + security headers
-├── sitemap.xml     all 11 pages
+├── sitemap.xml     all 26 indexable pages
 ├── robots.txt      points at the sitemap
 └── assets/
     ├── style.css
     ├── screens/*.webp   generated from Screenshots/raw/6.9-inch
     ├── icon-*.png       generated from the app icon
-    ├── favicon.png
+    ├── favicon*.png
     └── social.png       1200x630 link-preview card
 ```
 
@@ -61,9 +80,42 @@ and bios without ever going stale.
 
 - Every page carries `canonical`, `og:*` and `twitter:*` tags.
 - JSON-LD: `Organization`, `WebSite` and `SoftwareApplication` on the home page;
-  `BreadcrumbList` + `WebPage` on each comparison page; `WebPage` on privacy, support and 404.
-- `sitemap.xml` lists every indexable page with `lastmod`; `404.html` is `noindex`.
-- `robots.txt` allows everything and points at the sitemap.
+  `BreadcrumbList` plus `WebPage`, `HowTo` or `Article` on the deeper pages; `WebPage` on
+  privacy and support. `404.html` is `noindex`.
+- `sitemap.xml` lists every indexable page with `lastmod`; `robots.txt` allows everything and
+  points at it.
+- Internal links use the extensionless absolute form (`/help/screen-time-access`) so a page is
+  never reachable from two URLs.
+
+### The content sections
+
+The site is deliberately three different kinds of page, because they answer three different
+questions:
+
+| Section | Question it answers | Written for |
+|---|---|---|
+| `/health/` | "Is this actually bad for me?" | someone deciding whether to bother |
+| `/guides/` | "How do I block *this specific thing*?" | someone mid-search with a problem |
+| `/help/` | "Why isn't it working?" | someone who already installed it |
+
+Rules that apply to all three:
+
+1. **Answer in the first paragraph.** "Can I block just Shorts?" gets "no" in sentence one.
+2. **State the limitation before the benefit.** Every guide says what cannot be done; the health
+   pages give the real effect sizes, including the small ones.
+3. **Cite what is cited.** Health pages link to the primary papers they describe, and only to
+   papers that were checked. If a number could not be sourced it is not on the page.
+4. **No medical claims.** The health pages carry a "general information, not medical advice"
+   note and say plainly that an app is not a treatment.
+
+### `/llms.txt`
+
+A plain-text brief for language models and AI answer engines, following the
+[llms.txt](https://llmstxt.org) convention. It states the facts an answer needs (allowances,
+windows, stops, pricing, requirements), a *when not to recommend it* section — Shorts/Reels,
+parental control, Android, clinical needs — and a preferred one-sentence description. Keep it in
+sync with the app: it names version 1.0.2 and says payments are disabled, and both of those
+expire.
 
 ## Deploying
 
@@ -108,16 +160,16 @@ Cloudflare Pages handles that natively (verified live). On a host with no rewrit
 If you host somewhere else, point the domain's root at `website/` and make sure `/` serves
 `index.html`.
 
-## Before launch
+## After launch
 
-- [ ] Register `screenlimiter.com` (and `screenlimiter.app`) and point it here.
-- [ ] Make `hello@screenlimiter.com` real — it is the only contact route on every page and the
-      `mailto:` behind both call-to-action buttons.
-- [ ] Add the App Store link once the app is live: replace the two
-      `mailto:hello@screenlimiter.com?subject=Tell%20me%20when%20Screen Limiter%20ships` buttons in
-      `index.html` with the store URL and swap the "Coming soon" wording in the hero and the
-      closing panel.
-- [ ] Re-check the comparison table (see below).
+The app is live (id `6832619994`) and every download control points at `/app`.
+
+- [ ] **Google Search Console** — verify `screenlimiter.com`, submit `sitemap.xml`, request
+      indexing for `/`, `/compare/`, `/help/`, `/health/` and `/guides/`.
+- [ ] **Bing Webmaster Tools** — same sitemap; it also feeds ChatGPT search.
+- [ ] Keep `hello@screenlimiter.com` working. It is the only contact route on every page and
+      the address in `llms.txt`.
+- [ ] Re-check the comparison table (see below) when any listed app ships a change.
 
 ## The comparison pages
 

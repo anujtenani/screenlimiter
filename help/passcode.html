@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passcode and Parent Mode — Screen Limiter help</title>
+<meta name="description" content="How the passcode is stored, how to reset it with a security question, what Parent Mode locks, and what to do when you are locked out for good.">
+<meta name="theme-color" content="#0B0E13">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="../assets/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://screenlimiter.com/help/passcode">
+<link rel="stylesheet" href="../assets/style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Screen Limiter">
+<meta property="og:title" content="Passcode and Parent Mode — Screen Limiter help">
+<meta property="og:description" content="How the passcode is stored, how to reset it with a security question, what Parent Mode locks, and what to do when you are locked out for good.">
+<meta property="og:url" content="https://screenlimiter.com/help/passcode">
+<meta property="og:image" content="https://screenlimiter.com/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Passcode and Parent Mode — Screen Limiter help">
+<meta name="twitter:description" content="How the passcode is stored, how to reset it with a security question, what Parent Mode locks, and what to do when you are locked out for good.">
+<meta name="twitter:image" content="https://screenlimiter.com/assets/social.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://screenlimiter.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://screenlimiter.com/help/"},{"@type":"ListItem","position":3,"name":"Passcode and Parent Mode","item":"https://screenlimiter.com/help/passcode"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Passcode and Parent Mode — Screen Limiter help","description":"What the Screen Limiter passcode protects, how the security question works, and what to do if it is forgotten.","url":"https://screenlimiter.com/help/passcode","isPartOf":{"@type":"WebSite","name":"Screen Limiter","url":"https://screenlimiter.com/"}}</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/"><img src="../assets/icon-180.png" alt="">Screen Limiter</a>
+    <nav class="nav-links">
+      <a href="/#how" class="hide-sm">How it works</a>
+      <a href="/health/">Why it matters</a>
+      <a href="/compare/" class="hide-xs">Compare</a>
+      <a href="/help/">Help</a>
+      <a href="/app">App Store</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap doc article">
+    <p class="crumb"><a href="/">Screen Limiter</a> / <a href="/help/">Help</a> / Passcode and Parent Mode</p>
+    <h1>Passcode, Parent Mode and getting back in</h1>
+    <p class="updated">Last updated November 2026</p>
+    <p class="lead">The passcode is a lock on the settings, not on the phone. Knowing exactly which is which is the difference between a limit that holds and a lockout that ruins a weekend.</p>
+
+    <h2>What the passcode protects</h2>
+    <p>It is not a lock on the phone. It is a lock on Screen Limiter's settings, and it covers the
+    things that would otherwise make every limit optional in one tap:</p>
+    <ul>
+      <li>Editing a group's allowance, window, strictness or app selection.</li>
+      <li>Deleting a group.</li>
+      <li>Pausing all limits.</li>
+      <li>Removing the passcode or resetting everything.</li>
+    </ul>
+    <p>Without one, the only person a limit protects you from is the version of you who would not
+    open the settings. That is a real person, which is why deleting the app is the honest escape
+    hatch rather than something the app pretends it can prevent.</p>
+
+    <h2>How it is stored</h2>
+    <p>The code is kept as a salted hash in the keychain, never as the code itself. That has two
+    consequences worth stating plainly:</p>
+    <ul>
+      <li>Nobody — not the app, not us — can read it back.</li>
+      <li>If there is no security question, there is no recovery.</li>
+    </ul>
+
+    <h2>The security question</h2>
+    <p>When you set a passcode you can also set a question and answer. <strong>Forgot
+    passcode?</strong> on the passcode screen asks the question and, on a correct answer, clears
+    the old code so you can set a new one. The answer is matched case-insensitively after
+    trimming spaces; it is not a password, it is a way back to your own settings.</p>
+    <p>Set it. The alternative is deleting the app and rebuilding every group, and that is a
+    genuinely irritating afternoon.</p>
+
+    <h2>Parent Mode</h2>
+    <p>Parent Mode hands the code to someone else: Screen Limiter locks itself, every change needs
+    their code, and the security question is the route back once they have it. Two uses:</p>
+    <ul>
+      <li><strong>On a child's phone.</strong> You keep the code; they can use the allowances but
+      cannot edit them.</li>
+      <li><strong>On your own phone.</strong> Someone else holds the code, which is a stronger
+      promise than one you made to yourself at midnight.</li>
+    </ul>
+    <p>Parent Mode is not a substitute for Apple's Screen Time parental controls. It protects this
+    app's settings; it does not stop the phone being reset or the app being deleted.</p>
+
+    <h2>Locked out with no security question</h2>
+    <p>There is one way out, and it is the same one Apple's frameworks leave for every app in this
+    category: delete Screen Limiter and reinstall it. That removes the passcode and every group,
+    passcode and insight with it. It is the lock doing its job — an unlockable lock would be a
+    formality.</p>
+
+    <h2>Changing or removing the code</h2>
+    <ul>
+      <li><strong>Change it</strong> — Settings → Passcode → Change passcode, current code first.</li>
+      <li><strong>Remove it</strong> — Settings → Passcode → Remove passcode. In Parent Mode this
+      needs the parent's code.</li>
+      <li><strong>Start over</strong> — Settings → Reset everything. Every group, insight and the
+      passcode are deleted, and limits stop immediately.</li>
+    </ul>
+
+    <div class="note">
+      <p>This is not your <strong>Screen Time passcode</strong>. Apple's passcode (Settings → Screen
+      Time → Lock Screen Time Settings) protects App Limits and Downtime, and iOS alone manages
+      it. Screen Limiter's passcode is separate, and this page is about that one.</p>
+    </div>
+
+    <h2>Questions</h2>
+
+    <details class="faq-item" open>
+      <summary>Can support reset my passcode?</summary>
+      <p>No. The code exists only as a hash on your device, and there is no account or server that
+      could hold a copy. That is the point of it.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does the passcode block deleting the app?</summary>
+      <p>No, and no third-party app can do that on an iPhone. iOS gives apps no hook into their own
+      removal. A passcode protects the settings; it is not a device management tool.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>What happens to Parent Mode if I restore from a backup?</summary>
+      <p>The lock state is part of the app's saved state and comes back with the backup, including
+      the parent's code — which is why the security question is the only recovery that does not
+      involve starting over.</p>
+    </details>
+    <div class="cta-inline">
+      <h2>Five minutes an hour, then it stops</h2>
+      <p>Screen Limiter is free on the App Store. Pick the apps, choose an allowance, and let iOS hold the line.</p>
+      <a class="btn btn-primary" href="/app">Download on the App Store</a>
+    </div>
+
+    <div class="related">
+      <h2>Keep reading</h2>
+      <div class="related-links">
+        <a href="/help/more-time">Getting more time</a>
+        <a href="/help/limit-not-blocking">A limit isn't blocking</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/help/">Help centre</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/"><img src="../assets/icon-180.png" alt="">Screen Limiter</a>
+        <p>A few minutes an hour. A small allowance, repeated, so a bad morning doesn't cost you the day.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>App</h4>
+          <a href="/#how">How it works</a>
+          <a href="/#screenshots">Screenshots</a>
+          <a href="/#faq">Questions</a>
+          <a href="/app">App Store</a>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <a href="/health/">Why it matters</a>
+          <a href="/health/sleep">Screens and sleep</a>
+          <a href="/health/attention">Attention</a>
+          <a href="/guides/">Guides</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compare</h4>
+          <a href="/compare/best-screen-time-apps">Best apps</a>
+          <a href="/compare/screenlimiter-vs-precursor">vs Precursor</a>
+          <a href="/compare/screenlimiter-vs-opal">vs Opal</a>
+          <a href="/compare/screenlimiter-vs-screenzen">vs ScreenZen</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="/help/">Help centre</a>
+          <a href="/support">Support</a>
+          <a href="/privacy">Privacy</a>
+          <a href="mailto:hello@screenlimiter.com">Email us</a>
+        </div>
+      </div>
+    </div>
+    <p class="legal">© 2026 Screen Limiter. Built on Apple's Screen Time framework (Family Controls, Device Activity, Managed Settings). Not affiliated with Apple Inc. iPhone, iPad and App Store are trademarks of Apple Inc. Precursor, Opal, one sec, ScreenZen, Jomo and Freedom belong to their respective owners and appear here for comparison only.</p>
+  </div>
+</footer>
+
+</body>
+</html>
