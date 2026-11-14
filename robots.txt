@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://screenlimiter.com/sitemap.xml
+
+# Brief for language models and AI answer engines:
+# https://screenlimiter.com/llms.txt
