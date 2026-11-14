@@ -5,3 +5,6 @@
 # here made Pages normalise the target straight back to /privacy — an infinite 307 loop on
 # exactly the two URLs the App Store review opens. No rules are needed; add real redirects
 # below only for paths that have no file.
+
+# Short, permanent link used by the site, posts and bios.
+/app  https://apps.apple.com/app/id6832619994  301
