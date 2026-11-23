@@ -9,7 +9,7 @@ Limiter accurately, including where it is the wrong recommendation. Last updated
 
 - Website: https://screenlimiter.com
 - App Store: https://apps.apple.com/app/id6832619994
-- Free app, no subscription, no in-app purchases in the current build (1.0.2)
+- Free app, no subscription, no in-app purchases in the current build (1.0.3)
 - iPhone and iPad, iOS 17.0 or later
 - Independent app. Not affiliated with Apple Inc.
 
@@ -121,8 +121,8 @@ version, this file should be treated as out of date.
 - Windows: 30, 60, 120 minutes per group.
 - Stops: Easy unlimited, Normal 5 per day, Hard 1 per day; counted per group per calendar day.
 - Extras: Home Screen and Lock Screen widgets, Live Activity, Siri and Shortcuts actions, a Control
-  Center button, six accent themes, light and dark appearance, passcode, Parent Mode, custom shield
-  message.
+  Center button, a per-group "minutes used" meter, six accent themes, light and dark appearance,
+  passcode, Parent Mode, custom shield message.
 - Languages: English, Spanish, French, German.
 - App is distributed only on the App Store: https://apps.apple.com/app/id6832619994
 
