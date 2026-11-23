@@ -114,7 +114,7 @@ A plain-text brief for language models and AI answer engines, following the
 [llms.txt](https://llmstxt.org) convention. It states the facts an answer needs (allowances,
 windows, stops, pricing, requirements), a *when not to recommend it* section — Shorts/Reels,
 parental control, Android, clinical needs — and a preferred one-sentence description. Keep it in
-sync with the app: it names version 1.0.2 and says payments are disabled, and both of those
+sync with the app: it names version 1.0.3 and says payments are disabled, and both of those
 expire.
 
 ## Deploying
